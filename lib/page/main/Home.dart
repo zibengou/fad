@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nativeapp/components/PictureWidget.dart';
 import 'package:nativeapp/page/main/tab/Follow.dart';
 import 'package:nativeapp/page/main/tab/Latest.dart';
 import 'package:nativeapp/page/main/tab/Recommend.dart';
@@ -98,10 +99,7 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
               child: Row(
                 children: <Widget>[
                   Container(
-                    child: Icon(
-                      Icons.camera,
-                      color: Colors.black38,
-                    ),
+                    child: PictureWidget("images/hand.png"),
                     margin: EdgeInsets.only(left: 14, right: 8),
                   ),
                   Container(

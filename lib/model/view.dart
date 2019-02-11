@@ -1,3 +1,5 @@
+import 'package:meta/meta.dart';
+
 class CardInfo {
   int id;
   String title;
@@ -40,4 +42,29 @@ class CardImageInfo {
 enum ImageType { GIF, LONG, DEFAULT }
 
 // todo 补全名称与图表
-enum IconType { SMILE, DISLIKE, HEART, SAD, APPLAUSE, FUCK }
+enum IconType { SMILE, DISLIKE, HEART, SAD, APPLAUSE, FUCK, MESSAGE }
+
+enum MessageType { CLICK, REPLY, FOLLOW, SYSTEM }
+
+class MessageInfo {
+  int id;
+  MessageType type;
+  IconType iconType;
+  String name;
+  String content;
+  String msg;
+  String desc;
+  String avatar;
+  DateTime time;
+
+  MessageInfo(
+      {this.id,
+      @required this.type,
+      this.iconType,
+      this.name,
+      this.content,
+      this.msg,
+      this.desc,
+      this.avatar,
+      this.time});
+}

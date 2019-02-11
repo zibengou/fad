@@ -14,12 +14,8 @@ class MainState extends State<MainScreen> {
   String _currentIndex = "首页";
   final Map<String, Widget> _children = {
     "首页": HomePage(),
-    "动态": DynamicPage(
-      color: Colors.grey,
-    ),
-    "我的": AccountPage(
-      color: Colors.green,
-    ),
+    "消息": DynamicPage(),
+    "我的": AccountPage(userName: "王闭嘴的小号",avatar: "",desc: "共有345人踩过你，建议注销",),
   };
 
   @override
@@ -30,7 +26,7 @@ class MainState extends State<MainScreen> {
           onTap: (k) => onTabTapped(k),
           data: {
             "首页": Icons.home,
-            "动态": Icons.email,
+            "消息": Icons.email,
             "我的": Icons.person,
           },
         ));

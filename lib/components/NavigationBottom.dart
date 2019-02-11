@@ -74,7 +74,7 @@ class NavigationIcon extends StatelessWidget {
           padding: EdgeInsets.only(top: 5),
           child: Column(
             children: <Widget>[
-              Icon(icon, color: selected ? Colors.lightBlue : Colors.grey[400]),
+              Icon(icon, color: selected ? Colors.lightBlue : Colors.grey[400],size: 24,),
               Text(
                 text,
                 style: TextStyle(

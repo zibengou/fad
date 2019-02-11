@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nativeapp/model/view.dart';
+import 'package:nativeapp/utils/common.dart';
 
 typedef LoadDataFunction = List<CardInfo> Function(int f);
 
@@ -103,35 +104,15 @@ class CardListState extends State<CardList> {
           ),
           Container(
               padding: EdgeInsets.only(left: 8, right: 8, top: 4, bottom: 12),
-              child: _buildBottom(c.iconCount, c.forkCount, c.commentCount,
-                  parseIcon(c.iconType), c.analysable)),
+              child: _buildBottom(
+                  c.iconCount,
+                  c.forkCount,
+                  c.commentCount,
+                  Common.parseIcon(c.iconType, iconSize, iconColor),
+                  c.analysable)),
         ],
       ),
     );
-  }
-
-  Icon parseIcon(IconType type) {
-    switch (type) {
-      case IconType.SMILE:
-        return Icon(
-          Icons.android,
-          size: iconSize,
-          color: iconColor,
-        );
-      case IconType.SAD:
-        return Icon(Icons.settings_input_antenna,
-            size: iconSize, color: iconColor);
-      case IconType.DISLIKE:
-        return Icon(Icons.close, size: iconSize, color: iconColor);
-      case IconType.HEART:
-        return Icon(Icons.healing, size: iconSize, color: iconColor);
-      case IconType.APPLAUSE:
-        return Icon(Icons.add, size: iconSize, color: iconColor);
-      case IconType.FUCK:
-        return Icon(Icons.fullscreen_exit, size: iconSize, color: iconColor);
-      default:
-        return Icon(Icons.android, size: iconSize, color: iconColor);
-    }
   }
 
   Widget _buildCardTitle(avatar, title, desc) {
@@ -222,12 +203,12 @@ class CardListState extends State<CardList> {
           margin: EdgeInsets.only(left: 4, right: 20),
           child: Text(iconCount.toString(), style: style),
         ),
-        Icon(Icons.message, size: iconSize, color: iconColor),
+        Icon(IconData(0xe667,fontFamily: "iconfont"), size: iconSize, color: iconColor),
         Container(
           margin: EdgeInsets.only(left: 4, right: 20),
           child: Text(commentCount.toString(), style: style),
         ),
-        Icon(Icons.all_inclusive, size: iconSize, color: iconColor),
+        Icon(IconData(0xe622,fontFamily: "iconfont"), size: iconSize, color: iconColor),
         Container(
           margin: EdgeInsets.only(left: 4, right: 20),
           child: Text(forkCount.toString(), style: style),

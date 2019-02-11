@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:nativeapp/page/Create.dart';
+import 'package:nativeapp/page/UserInfo.dart';
 import 'package:nativeapp/page/main/Main.dart';
 import 'package:nativeapp/page/Setting.dart';
 
